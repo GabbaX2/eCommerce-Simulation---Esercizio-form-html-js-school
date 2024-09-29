@@ -1,0 +1,15 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.svg-logo {
+    width: 30px;
+    height: auto;
+}
+.mt-8 {
+    margin-top: 2rem;
+}
+
+.dropdown-content {
+    z-index: 50;
+}

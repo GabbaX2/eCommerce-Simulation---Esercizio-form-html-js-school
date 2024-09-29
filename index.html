@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essential Sneakerz - Prodotti</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body class="bg-dark-100">
+
+<div class="navbar bg-base-100">
+    <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl">Essential Sneakerz</a>
+    </div>
+    <div class="flex-none gap-2">
+        <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-ghost btn-circle">
+                <div class="indicator">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M3 3h2l.7 3.4m0 0H21l-1.68 8.4a2 2 0 01-1.97 1.6H8.33a2 2 0 01-1.97-1.6L4.71 6.4m-.01 0L4 3m0 0H2m5 18a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/>
+                    </svg>
+                    <span id="cart-count" class="badge badge-sm indicator-item">0</span>
+                </div>
+            </label>
+            <div tabindex="0" class="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
+                <div class="card-body">
+                    <span class="font-bold text-lg">Carrello</span>
+                    <div id="cart-items">
+                        <p>Il tuo carrello è vuoto.</p>
+                    </div>
+                    <span id="total-price" class="text-info">Totale: €0.00</span>
+                    <div class="card-actions">
+                        <a href="checkout.html" class="btn btn-primary btn-block">Vai al Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="m-8">
+    <h2 class="text-2xl font-bold mb-6">Seleziona i tuoi prodotti</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card bg-base-100 shadow-xl">
+            <figure class="h-48 overflow-hidden">
+                <img class="object-cover w-full h-full"
+                     src="https://imgs.search.brave.com/8nlHsnjNPW_Oj6Ilvnu7aRsNaDLJimjmUSRzsBlfa1s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuYWRpZGFzLmNv/bS9pbWFnZXMvd182/MDAsZl9hdXRvLHFf/YXV0by80NjU5ZWUw/NThiYTM0YmQyYTVk/MGFmNTAwMTA0YzE3/ZF85MzY2L0NhbXB1/c18wMHNfU2hvZXNf/QmxhY2tfSFE4NzA4/XzAxX3N0YW5kYXJk/LmpwZw"
+                     alt="Adidas Campus"/>
+            </figure>
+            <div class="card-body flex flex-col justify-between">
+                <div>
+                    <h2 class="card-title">Adidas</h2>
+                    <p>Modello: Campus 00s</p>
+                </div>
+                <div class="form-control mt-4">
+                    <label class="label">
+                        <span class="label-text">Seleziona la taglia:</span>
+                    </label>
+                    <select class="select select-bordered">
+                        <option disabled selected>Es. 39</option>
+                        <option>36</option>
+                        <option>36.5</option>
+                        <option>37</option>
+                        <option>37.5</option>
+                        <option>38</option>
+                        <option>38.5</option>
+                        <option>39</option>
+                        <option>39.5</option>
+                        <option>40</option>
+                        <option>40.5</option>
+                        <option>41</option>
+                        <option>41.5</option>
+                        <option>42</option>
+                        <option>42.5</option>
+                        <option>43</option>
+                        <option>43.5</option>
+                        <option>44</option>
+                        <option>44.5</option>
+                        <option>45</option>
+                        <option>45.5</option>
+                        <option>46</option>
+                    </select>
+                </div>
+                <div class="mt-4">
+                    <p>Prezzo: €110.00</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary" onclick="addToCart('Adidas Campus 00s', 110.00, event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 6h15l-1.5 9H6L4.5 3H1"></path>
+                                <circle cx="9" cy="20" r="1"></circle>
+                                <circle cx="20" cy="20" r="1"></circle>
+                            </svg>
+                            Aggiungi al Carrello
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl">
+            <figure class="h-48 overflow-hidden">
+                <img class="object-cover w-full h-full"
+                     src="https://imgs.search.brave.com/R8nkSZ2MuB0oLGJbaEQqMB8LeKoFD5dTqo4sD4xZEjY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/YnV6emZlZWQuY29t/L2J1enpmZWVkLXN0/YXRpYy9pbWFnZXMv/Wm14ZmJHOXpjM2tz/Y1Y5aGRYUnZMMk5m/WTNKdmNDeG9YekV4/TlRJc2QxOHhPVGMw/TEhoZk1UWXNlVjgw/T0RZPS9xZ2h3c3pt/Nm81dXhkN28zZTFo/by9haXItam9yZGFu/LTQtcmV0cm8td2hp/dGUtb3Jlby1jdDg1/MjctMTAwLWxhdGVy/YWwuanBlZy5qcGVn/P2Rvd25zaXplPTcw/MDoqJm91dHB1dC1x/dWFsaXR5PWF1dG8m/b3V0cHV0LWZvcm1h/dD1hdXRv"
+                     alt="Jordan 4 Oreo"/>
+            </figure>
+            <div class="card-body flex flex-col justify-between">
+                <div>
+                    <h2 class="card-title">Nike</h2>
+                    <p>Modello: Air Jordan 4 Oreo</p>
+                </div>
+                <div class="form-control mt-4">
+                    <label class="label">
+                        <span class="label-text">Seleziona la taglia:</span>
+                    </label>
+                    <select class="select select-bordered">
+                        <option disabled selected>Es. 39</option>
+                        <option>36</option>
+                        <option>36.5</option>
+                        <option>37</option>
+                        <option>37.5</option>
+                        <option>38</option>
+                        <option>38.5</option>
+                        <option>39</option>
+                        <option>39.5</option>
+                        <option>40</option>
+                        <option>40.5</option>
+                        <option>41</option>
+                        <option>41.5</option>
+                        <option>42</option>
+                        <option>42.5</option>
+                        <option>43</option>
+                        <option>43.5</option>
+                        <option>44</option>
+                        <option>44.5</option>
+                        <option>45</option>
+                        <option>45.5</option>
+                        <option>46</option>
+                    </select>
+                </div>
+                <div class="mt-4">
+                    <p>Prezzo: €424.99</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary" onclick="addToCart('Jordan 4 Oreo', 424.99, event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 6h15l-1.5 9H6L4.5 3H1"></path>
+                                <circle cx="9" cy="20" r="1"></circle>
+                                <circle cx="20" cy="20" r="1"></circle>
+                            </svg>
+                            Aggiungi al Carrello
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl">
+            <figure class="h-48 overflow-hidden">
+                <img class="object-cover w-full h-full"
+                     src="https://www.highsnobiety.com/static-assets/thumbor/ZWlWpkuSOPMQ5EvXT9-aIK05MjY=/1200x800/https://whatdropsnow.s3.amazonaws.com/product_image/189858/shrine_image/69865d0fcf5c8bcdbacb5a7aa0b04531.jpg"
+                     alt="New Balance 550"/>
+            </figure>
+            <div class="card-body flex flex-col justify-between">
+                <div>
+                    <h2 class="card-title">New Balance</h2>
+                    <p>Modello: 550</p>
+                </div>
+                <div class="form-control mt-4">
+                    <label class="label">
+                        <span class="label-text">Seleziona la taglia:</span>
+                    </label>
+                    <select class="select select-bordered">
+                        <option disabled selected>Es. 39</option>
+                        <option>36</option>
+                        <option>36.5</option>
+                        <option>37</option>
+                        <option>37.5</option>
+                        <option>38</option>
+                        <option>38.5</option>
+                        <option>39</option>
+                        <option>39.5</option>
+                        <option>40</option>
+                        <option>40.5</option>
+                        <option>41</option>
+                        <option>41.5</option>
+                        <option>42</option>
+                        <option>42.5</option>
+                        <option>43</option>
+                        <option>43.5</option>
+                        <option>44</option>
+                        <option>44.5</option>
+                        <option>45</option>
+                        <option>45.5</option>
+                        <option>46</option>
+                    </select>
+                </div>
+                <div class="mt-4">
+                    <p>Prezzo: €129.99</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary" onclick="addToCart('New Balance 550', 129.99, event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 6h15l-1.5 9H6L4.5 3H1"></path>
+                                <circle cx="9" cy="20" r="1"></circle>
+                                <circle cx="20" cy="20" r="1"></circle>
+                            </svg>
+                            Aggiungi al Carrello
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl">
+            <figure class="h-48 overflow-hidden">
+                <img class="object-cover w-full h-full"
+                     src="https://www.maximilian.it/cdn/shop/files/20300329704_1.jpg?v=1720173802&width=480"
+                     alt="Golden Goose Ball Star"/>
+            </figure>
+            <div class="card-body flex flex-col justify-between">
+                <div>
+                    <h2 class="card-title">Golden Goose</h2>
+                    <p>Modello: Ball Star</p>
+                </div>
+                <div class="form-control mt-4">
+                    <label class="label">
+                        <span class="label-text">Seleziona la taglia:</span>
+                    </label>
+                    <select class="select select-bordered">
+                        <option disabled selected>Es. 39</option>
+                        <option>36</option>
+                        <option>36.5</option>
+                        <option>37</option>
+                        <option>37.5</option>
+                        <option>38</option>
+                        <option>38.5</option>
+                        <option>39</option>
+                        <option>39.5</option>
+                        <option>40</option>
+                        <option>40.5</option>
+                        <option>41</option>
+                        <option>41.5</option>
+                        <option>42</option>
+                        <option>42.5</option>
+                        <option>43</option>
+                        <option>43.5</option>
+                        <option>44</option>
+                        <option>44.5</option>
+                        <option>45</option>
+                        <option>45.5</option>
+                        <option>46</option>
+                    </select>
+                </div>
+                <div class="mt-4">
+                    <p>Prezzo: €480.00</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary" onclick="addToCart('Golden Goose Ball Star', 480.00, event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 6h15l-1.5 9H6L4.5 3H1"></path>
+                                <circle cx="9" cy="20" r="1"></circle>
+                                <circle cx="20" cy="20" r="1"></circle>
+                            </svg>
+                            Aggiungi al Carrello
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl">
+            <figure class="h-48 overflow-hidden">
+                <img class="object-cover w-full h-full"
+                     src="https://down-id.img.susercontent.com/file/id-11134207-7r992-lq1lqhtsv9l1e8"
+                     alt="Yeezy Boost 350 V2 Onyx"/>
+            </figure>
+            <div class="card-body flex flex-col justify-between">
+                <div>
+                    <h2 class="card-title">Adidas</h2>
+                    <p>Modello: Yeezy Boost 350 V2 Onyx</p>
+                </div>
+                <div class="form-control mt-4">
+                    <label class="label">
+                        <span class="label-text">Seleziona la taglia:</span>
+                    </label>
+                    <select class="select select-bordered">
+                        <option disabled selected>Es. 39</option>
+                        <option>36</option>
+                        <option>36.5</option>
+                        <option>37</option>
+                        <option>37.5</option>
+                        <option>38</option>
+                        <option>38.5</option>
+                        <option>39</option>
+                        <option>39.5</option>
+                        <option>40</option>
+                        <option>40.5</option>
+                        <option>41</option>
+                        <option>41.5</option>
+                        <option>42</option>
+                        <option>42.5</option>
+                        <option>43</option>
+                        <option>43.5</option>
+                        <option>44</option>
+                        <option>44.5</option>
+                        <option>45</option>
+                        <option>45.5</option>
+                        <option>46</option>
+                    </select>
+                </div>
+                <div class="mt-4">
+                    <p>Prezzo: €309.99</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary"
+                                onclick="addToCart('Adidas Yeezy Boost 350 V2 Onyx', 309.99, event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 6h15l-1.5 9H6L4.5 3H1"></path>
+                                <circle cx="9" cy="20" r="1"></circle>
+                                <circle cx="20" cy="20" r="1"></circle>
+                            </svg>
+                            Aggiungi al Carrello
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl">
+            <figure class="h-48 overflow-hidden">
+                <img class="object-cover w-full h-full"
+                     src="https://images.stockx.com/images/Nike-SB-Dunk-Low-Verdy-Visty-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&q=90&dpr=2&trim=color&updated_at=1725369765"
+                     alt="Nike SB Dunk Low Verdy Visty"/>
+            </figure>
+            <div class="card-body flex flex-col justify-between">
+                <div>
+                    <h2 class="card-title">Nike</h2>
+                    <p>Modello: SB Dunk Low Verdy Visty</p>
+                </div>
+                <div class="form-control mt-4">
+                    <label class="label">
+                        <span class="label-text">Seleziona la taglia:</span>
+                    </label>
+                    <select class="select select-bordered">
+                        <option disabled selected>Es. 39</option>
+                        <option>36</option>
+                        <option>36.5</option>
+                        <option>37</option>
+                        <option>37.5</option>
+                        <option>38</option>
+                        <option>38.5</option>
+                        <option>39</option>
+                        <option>39.5</option>
+                        <option>40</option>
+                        <option>40.5</option>
+                        <option>41</option>
+                        <option>41.5</option>
+                        <option>42</option>
+                        <option>42.5</option>
+                        <option>43</option>
+                        <option>43.5</option>
+                        <option>44</option>
+                        <option>44.5</option>
+                        <option>45</option>
+                        <option>45.5</option>
+                        <option>46</option>
+                    </select>
+                </div>
+                <div class="mt-4">
+                    <p>Prezzo: €319.99</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary"
+                                onclick="addToCart('Nike SB Dunk Low Verdy Visty', 319.99, event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 6h15l-1.5 9H6L4.5 3H1"></path>
+                                <circle cx="9" cy="20" r="1"></circle>
+                                <circle cx="20" cy="20" r="1"></circle>
+                            </svg>
+                            Aggiungi al Carrello
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl">
+            <figure class="h-48 overflow-hidden">
+                <img class="object-cover w-full h-full"
+                     src="https://th.bing.com/th/id/OIP.JDLKf1KekdFiWSuRIDm8ZQHaFB?rs=1&pid=ImgDetMain"
+                     alt="Adidas Bad Bunny x Gazelle Indoor 'Core White'"/>
+            </figure>
+            <div class="card-body flex flex-col justify-between">
+                <div>
+                    <h2 class="card-title">Adidas</h2>
+                    <p>Modello: Bad Bunny x Gazelle Indoor 'Core White'</p>
+                </div>
+                <div class="form-control mt-4">
+                    <label class="label">
+                        <span class="label-text">Seleziona la taglia:</span>
+                    </label>
+                    <select class="select select-bordered">
+                        <option disabled selected>Es. 39</option>
+                        <option>36</option>
+                        <option>36.5</option>
+                        <option>37</option>
+                        <option>37.5</option>
+                        <option>38</option>
+                        <option>38.5</option>
+                        <option>39</option>
+                        <option>39.5</option>
+                        <option>40</option>
+                        <option>40.5</option>
+                        <option>41</option>
+                        <option>41.5</option>
+                        <option>42</option>
+                        <option>42.5</option>
+                        <option>43</option>
+                        <option>43.5</option>
+                        <option>44</option>
+                        <option>44.5</option>
+                        <option>45</option>
+                        <option>45.5</option>
+                        <option>46</option>
+                    </select>
+                </div>
+                <div class="mt-4">
+                    <p>Prezzo: €189.99</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary"
+                                onclick="addToCart('Adidas Bad Bunny x Gazelle Indoor Core White', 189.99, event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 6h15l-1.5 9H6L4.5 3H1"></path>
+                                <circle cx="9" cy="20" r="1"></circle>
+                                <circle cx="20" cy="20" r="1"></circle>
+                            </svg>
+                            Aggiungi al Carrello
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl">
+            <figure class="h-48 overflow-hidden">
+                <img class="object-cover w-full h-full"
+                     src="https://eu.kith.com/cdn/shop/products/SL47206700-Salomon-x-Kith-XT-6-GTX-Hazelnut-Burnt-Henna-Vanilla-Ice_30112.jpg?v=1671179532&width=1920"
+                     alt="Salomon Kith x XT-6 GORE-TEX 'Hazelnut Burnt Henna'"/>
+            </figure>
+            <div class="card-body flex flex-col justify-between">
+                <div>
+                    <h2 class="card-title">Salomon</h2>
+                    <p>Modello: Kith x XT-6 GORE-TEX 'Hazelnut Burnt Henna'
+                    </p>
+                </div>
+                <div class="form-control mt-4">
+                    <label class="label">
+                        <span class="label-text">Seleziona la taglia:</span>
+                    </label>
+                    <select class="select select-bordered">
+                        <option disabled selected>Es. 39</option>
+                        <option>36</option>
+                        <option>36.5</option>
+                        <option>37</option>
+                        <option>37.5</option>
+                        <option>38</option>
+                        <option>38.5</option>
+                        <option>39</option>
+                        <option>39.5</option>
+                        <option>40</option>
+                        <option>40.5</option>
+                        <option>41</option>
+                        <option>41.5</option>
+                        <option>42</option>
+                        <option>42.5</option>
+                        <option>43</option>
+                        <option>43.5</option>
+                        <option>44</option>
+                        <option>44.5</option>
+                        <option>45</option>
+                        <option>45.5</option>
+                        <option>46</option>
+                    </select>
+                </div>
+                <div class="mt-4">
+                    <p>Prezzo: €601.00</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary"
+                                onclick="addToCart('Salomon Kith x XT-6 GORE-TEX Hazelnut Burnt Henna', 601.00, event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 6h15l-1.5 9H6L4.5 3H1"></path>
+                                <circle cx="9" cy="20" r="1"></circle>
+                                <circle cx="20" cy="20" r="1"></circle>
+                            </svg>
+                            Aggiungi al Carrello
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl">
+            <figure class="h-48 overflow-hidden">
+                <img class="object-cover w-full h-full"
+                     src="https://images.vans.com/is/image/VansEU/VN000E6VE36-HERO?$PDP-MEDIA-SET-PREVIEW-RESOLUTION$"
+                     alt="BAPE x Vans Old Skool 36 'ABC Camo'"/>
+            </figure>
+            <div class="card-body flex flex-col justify-between">
+                <div>
+                    <h2 class="card-title">Vans</h2>
+                    <p>Modello: BAPE x Old Skool 36 'ABC Camo'</p>
+                </div>
+                <div class="form-control mt-4">
+                    <label class="label">
+                        <span class="label-text">Seleziona la taglia:</span>
+                    </label>
+                    <select class="select select-bordered">
+                        <option disabled selected>Es. 39</option>
+                        <option>36</option>
+                        <option>36.5</option>
+                        <option>37</option>
+                        <option>37.5</option>
+                        <option>38</option>
+                        <option>38.5</option>
+                        <option>39</option>
+                        <option>39.5</option>
+                        <option>40</option>
+                        <option>40.5</option>
+                        <option>41</option>
+                        <option>41.5</option>
+                        <option>42</option>
+                        <option>42.5</option>
+                        <option>43</option>
+                        <option>43.5</option>
+                        <option>44</option>
+                        <option>44.5</option>
+                        <option>45</option>
+                        <option>45.5</option>
+                        <option>46</option>
+                    </select>
+                </div>
+                <div class="mt-4">
+                    <p>Prezzo: €230.00</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary"
+                                onclick="addToCart('BAPE x Old Skool 36 ABC Camo', 230.00, event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 6h15l-1.5 9H6L4.5 3H1"></path>
+                                <circle cx="9" cy="20" r="1"></circle>
+                                <circle cx="20" cy="20" r="1"></circle>
+                            </svg>
+                            Aggiungi al Carrello
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+</body>
+
+</html>
